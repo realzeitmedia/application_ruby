@@ -37,13 +37,6 @@ action :before_compile do
   node.override[:nginx][:source][:passenger][:version] = new_resource.passenger_version
   node.override[:nginx][:source][:passenger][:ruby] = new_resource.passenger_ruby
   node.override[:nginx][:source][:passenger][:root] = new_resource.passenger_root
-  #node.override[:nginx][:source][:passenger][:version] = "4.0.44"
-  #node.override[:nginx][:source][:passenger][:ruby] = "/usr/local/bin/ruby"
-  #node.override[:nginx][:source][:passenger][:root] = "/usr/local/lib/ruby/gems/2.1.0/gems/passenger-4.0.44"
-  #node.override[:nginx][:passenger][:root] = "/usr/local/lib/ruby/gems/2.1.0/gems/passenger-4.0.44"
-  #node.override[:nginx][:source][:passenger][:version] = "4.0.44"
-  #node.override[:nginx][:source][:passenger][:ruby] = "/usr/local/bin/ruby"
-  #node.override[:nginx][:source][:passenger][:root] = "/usr/local/lib/ruby/gems/2.1.0/gems/passenger-4.0.44"
 
   include_recipe "nginx::source"
   include_recipe "nginx::passenger"
