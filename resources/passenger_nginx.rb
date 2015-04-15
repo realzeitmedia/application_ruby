@@ -25,6 +25,6 @@ attribute :webapp_template, :kind_of => [String, NilClass], :default => nil
 attribute :port, :kind_of => String, :default => "80"
 attribute :ssl_port, :kind_of => String, :default => "443"
 attribute :enable_ssl, :kind_of => [TrueClass, FalseClass, NilClass], :default => nil
-attribute :passenger_version, :kind_of => String, :default => "4.0.44"
+attribute :passenger_version, :kind_of => String, :default => "5.0.6"
 attribute :passenger_ruby, :kind_of => String, :default => "/usr/bin/ruby"
 attribute :passenger_root, :kind_of => String, :default => nil
