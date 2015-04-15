@@ -31,6 +31,7 @@ action :before_compile do
     'nginx::http_gzip_static_module',
     'nginx::http_stub_status_module'
   ]
+  node.override[:nginx][:passenger][:install_method] = "source"
   node.override[:nginx][:passenger][:version] = new_resource.passenger_version
   node.override[:nginx][:passenger][:ruby] = new_resource.passenger_ruby
   node.override[:nginx][:passenger][:root] = new_resource.passenger_root
@@ -39,7 +40,6 @@ action :before_compile do
   node.override[:nginx][:source][:passenger][:root] = new_resource.passenger_root
 
   include_recipe "nginx::source"
-  include_recipe "nginx::passenger"
 
   unless new_resource.server_aliases
     server_aliases = [ "#{new_resource.application.name}.#{node['domain']}", node['fqdn'] ]
